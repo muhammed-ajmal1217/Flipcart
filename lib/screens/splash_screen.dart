@@ -24,12 +24,13 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 3, 7, 252),
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 240),
+            padding: const EdgeInsets.only(top: 350),
             child:
-                Center(child: Image.asset('lib/asset/flipkart-logo-39906.png')),
+                Center(child: Image.asset('asset/flipkart-logo-39904.png',height: 70,)),
           )
         ],
       ),

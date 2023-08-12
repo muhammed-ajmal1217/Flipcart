@@ -63,14 +63,14 @@ class HomePage extends StatelessWidget {
               width: double.infinity,
               child: AnotherCarousel(images: [
                 _buildImageWithText('asset/pexels-pixabay-39671.jpg',
-                    'Image 1 Text', '20% off'),
+                    'Weight gaining Dumbles\nAre in Low Price\nhurry up..', '20% off'),
                 _buildImageWithText('asset/pexels-soulful-pizza-3780681.jpg',
-                    'Image 2 Text', '20% off'),
+                    'Wired and Wireless\nEar phones,Just For you..', '20% off'),
                 _buildImageWithText('asset/pexels-tracy-le-blanc-607812.jpg',
-                    'Image 3 Text', '30% off'),
+                    'Apple IPhone 12 Mini APPLE(5.4-..\n(64 GB),\nOnly LImited Stocks', '30% off'),
                 _buildImageWithText(
                     'asset/elsa-olofsson-Pm0K9Y3EPUc-unsplash.jpg',
-                    'Image 4 Text',
+                    'Ayurvedic Products are \nNow on Affordable Price\nOffer Available only for this Time...',
                     '50% off'),
               ]),
             ),
@@ -310,13 +310,16 @@ class HomePage extends StatelessWidget {
           left: 0,
           right: 0,
           child: Container(
-            child: Text(text,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.left),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(text,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.left),
+            ),
           ),
         ),
         Positioned(
