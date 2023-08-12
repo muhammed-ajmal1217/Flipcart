@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myappp2/screens/my_orders.dart';
 
 class accountPage extends StatelessWidget {
   const accountPage({super.key});
@@ -80,21 +81,54 @@ class accountPage extends StatelessWidget {
                     width: double.infinity,
                     height: 130,
                     color: Colors.white,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            
-                          ],
-                        ),
-                        SizedBox(height: 10),
-                        Row(
-                          children: [
-                           
-                          ],
-                        ),
-                      ],
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              ElevatedButton.icon(
+                                onPressed: () async {
+                                  await Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                          builder: (ctx) => MyOrdersPage()));
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.white,
+                                  side: BorderSide(color: Colors.black),
+                                  padding: EdgeInsets.symmetric(horizontal: 55),
+                                ),
+                                icon: Icon(
+                                  Icons.drafts_outlined,
+                                  color: Color.fromARGB(255, 5, 51, 151),
+                                ),
+                                label: Text(
+                                  'Order',
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 18),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 13,
+                              ),
+                              buttonListAc(iconData: Icons.favorite_border_outlined,text: 'Wishlist')
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          Row(
+                            children: [
+                              buttonListAc(iconData: Icons.help_center_outlined,text: 'Help Center'),
+                              
+                              SizedBox(
+                                width: 7,
+                              ),
+                              
+                              buttonListAc(iconData: Icons.redeem_outlined,text: 'Coupon'),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(height: 10),
@@ -329,9 +363,12 @@ class accountPage extends StatelessWidget {
                     child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                         backgroundColor: Colors.white,
+                          backgroundColor: Colors.white,
                         ),
-                        child: Text('Log Out',style: TextStyle(color: Colors.blue),)),
+                        child: Text(
+                          'Log Out',
+                          style: TextStyle(color: Colors.blue),
+                        )),
                   ),
                 ],
               ),
@@ -339,6 +376,52 @@ class accountPage extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Container buttonListAc({required IconData iconData, String? text}) {
+    return Container(
+                              width: 193,
+                              height: 38,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: Colors.white,
+                                border: Border.fromBorderSide(BorderSide(color: Colors.black))
+                                
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 40),
+                                child: Row(
+                                  children: [
+                                    Icon(iconData,color:Color.fromARGB(255, 5, 51, 151) ,),
+                                    SizedBox(width: 10,),
+                                    Text(text!,style: TextStyle(fontSize: 18),)
+                                  ],
+                                ),
+                              ),
+                            );
+  }
+
+  Row elevatedButtonAc({required IconData iconData, String? text}) {
+    return Row(
+      children: [
+        ElevatedButton.icon(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.white,
+            side: BorderSide(color: Colors.black),
+            padding: EdgeInsets.symmetric(horizontal: 55),
+          ),
+          icon: Icon(
+            iconData,
+            color: Color.fromARGB(255, 5, 51, 151),
+          ),
+          label: Text(
+            text!,
+            style: TextStyle(color: Colors.black, fontSize: 18),
+          ),
+        )
+      ],
     );
   }
 

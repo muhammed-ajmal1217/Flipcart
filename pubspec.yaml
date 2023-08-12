@@ -33,6 +33,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  flutter_rating_bar: ^4.0.1
   google_nav_bar: ^5.0.6
   lite_rolling_switch: ^1.0.1
 
@@ -94,6 +95,7 @@ flutter:
     - asset\Help center.jpg
     - asset\coupon.png
     - asset\deliveryboy.jpg
+    - asset\basket-clipart-md.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
